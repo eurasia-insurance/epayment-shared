@@ -31,7 +31,7 @@ public class XmlInvoiceAcceptResponce implements Serializable {
 	this.invoiceNumber = invoiceNumber;
     }
 
-    // constructors
+    // CONSTRUCTORS
 
     public XmlInvoiceAcceptResponce() {
     }

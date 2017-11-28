@@ -50,8 +50,8 @@ public class XmlInvoiceAcceptRequest implements Serializable {
     // currency *
 
     @XmlAttribute
-    @NotNullValue
     @XmlJavaTypeAdapter(XmlCurrencyAdapter.class)
+    @NotNullValue
     protected Currency currency;
 
     public Currency getCurrency() {
@@ -60,21 +60,6 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 
     public void setCurrency(Currency currency) {
 	this.currency = currency;
-    }
-
-    // externalId *
-
-    @XmlAttribute
-    @NotNullValue
-    @NotEmptyString
-    protected String externalId;
-
-    public String getExternalId() {
-	return externalId;
-    }
-
-    public void setExternalId(String externalId) {
-	this.externalId = externalId;
     }
 
     // language *
@@ -89,25 +74,6 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 
     public void setLanguage(LocalizationLanguage language) {
 	this.language = language;
-    }
-
-    // email *
-
-    @XmlAttribute
-    @NotNullValue
-    @ValidEmail
-    protected String email;
-
-    private String getEmail() {
-	return email;
-    }
-
-    public void setEmail(String email) {
-	this.email = email;
-    }
-
-    public Optional<String> optionalEmail() {
-	return MyOptionals.of(getEmail());
     }
 
     // name *
@@ -125,14 +91,52 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	this.name = name;
     }
 
-    // phoneNumber *
+    // externalId
 
     @XmlAttribute
-    @NotNullValue
+    protected String externalId;
+
+    public String getExternalId() {
+	return externalId;
+    }
+
+    public Optional<String> optExternalId() {
+	return MyOptionals.of(externalId);
+    }
+
+    public void setExternalId(String externalId) {
+	this.externalId = externalId;
+    }
+
+    // email
+
+    @XmlAttribute
+    @ValidEmail
+    protected String email;
+
+    public String getEmail() {
+	return email;
+    }
+
+    public Optional<String> optEmail() {
+	return MyOptionals.of(getEmail());
+    }
+
+    public void setEmail(String email) {
+	this.email = email;
+    }
+
+    // phoneNumber
+
+    @XmlAttribute
     protected PhoneNumber phoneNumber;
 
     public PhoneNumber getPhoneNumber() {
 	return phoneNumber;
+    }
+
+    public Optional<PhoneNumber> optPhoneNumber() {
+	return MyOptionals.of(getPhoneNumber());
     }
 
     public void setPhoneNumber(PhoneNumber phoneNumber) {
@@ -148,11 +152,16 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return taxpayerNumber;
     }
 
+    public Optional<TaxpayerNumber> optTaxpayerNumber() {
+	return MyOptionals.of(getTaxpayerNumber());
+    }
+
     public void setTaxpayerNumber(TaxpayerNumber taxpayerNumber) {
 	this.taxpayerNumber = taxpayerNumber;
     }
 
-    public Optional<TaxpayerNumber> optionalTaxpayerNumber() {
-	return MyOptionals.of(getTaxpayerNumber());
+    // CONSTRUCTORS
+
+    public XmlInvoiceAcceptRequest() {
     }
 }
