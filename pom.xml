@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tech.lapsa.maven</groupId>
+		<artifactId>maven-general</artifactId>
+		<version>3.0</version>
+	</parent>
+
+	<groupId>tech.lapsa.epayment</groupId>
+	<artifactId>epayment-shared</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>Epayment Lib : Shared</name>
+
+	<properties>
+		<!-- BOMS -->
+		<javax-javaee-bom.version>7.0</javax-javaee-bom.version>
+		<payara-bom.version>4.1.2-1</payara-bom.version>
+		<java-commons.version>1.1-SNAPSHOT</java-commons.version>
+		<!-- tech -->
+		<java-jaxb-commons.version>1.1-SNAPSHOT</java-jaxb-commons.version>
+		<javax-cdi-commons.version>1.0</javax-cdi-commons.version>
+		<javax-validation-commons.version>1.0</javax-validation-commons.version>
+		<epayment-facade.version>1.1-SNAPSHOT</epayment-facade.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- BOMS -->
+			<dependency>
+				<groupId>tech.lapsa.javax</groupId>
+				<artifactId>javax-javaee-bom</artifactId>
+				<version>${javax-javaee-bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>tech.lapsa.java</groupId>
+				<artifactId>java-commons-root</artifactId>
+				<version>${java-commons.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>tech.lapsa.epayment</groupId>
+				<artifactId>epayment-facade-root</artifactId>
+				<version>${epayment-facade.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- tech -->
+			<dependency>
+				<groupId>tech.lapsa.java</groupId>
+				<artifactId>java-jaxb-commons</artifactId>
+				<version>${java-jaxb-commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tech.lapsa.javax</groupId>
+				<artifactId>javax-cdi-commons</artifactId>
+				<version>${javax-cdi-commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tech.lapsa.javax</groupId>
+				<artifactId>javax-validation-commons</artifactId>
+				<version>${javax-validation-commons.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- tech -->
+		<dependency>
+			<groupId>tech.lapsa.java</groupId>
+			<artifactId>java-commons</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>tech.lapsa.java</groupId>
+			<artifactId>java-jaxb-commons</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+			<exclusions>
+				<exclusion>
+					<artifactId>java-commons</artifactId>
+					<groupId>tech.lapsa.java</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>tech.lapsa.javax</groupId>
+			<artifactId>javax-cdi-commons</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>tech.lapsa.javax</groupId>
+			<artifactId>javax-validation-commons</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+			<exclusions>
+				<exclusion>
+					<artifactId>java-commons</artifactId>
+					<groupId>tech.lapsa.java</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>tech.lapsa.epayment</groupId>
+			<artifactId>epayment-facade-client</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+			<exclusions>
+				<exclusion>
+					<groupId>tech.lapsa.epayment</groupId>
+					<artifactId>epayment-domain</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>international-core</artifactId>
+					<groupId>com.lapsa.international-lib</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- ext -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+		<!-- JavaEE -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- test -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<scm>
+		<connection>scm:git:https://gitlab.lapsa.tech/lapsa/epayment/shared.git</connection>
+		<developerConnection>scm:git:https://gitlab.lapsa.tech/lapsa/epayment/shared.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<issueManagement>
+		<system>gitlab</system>
+		<url>https://gitlab.lapsa.tech/lapsa/epayment/shared/issues</url>
+	</issueManagement>
+
+</project>
