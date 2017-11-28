@@ -22,8 +22,11 @@
 		<!-- tech -->
 		<java-jaxb-commons.version>1.1-SNAPSHOT</java-jaxb-commons.version>
 		<javax-cdi-commons.version>1.0</javax-cdi-commons.version>
-		<javax-validation-commons.version>1.0</javax-validation-commons.version>
+		<javax-validation-commons.version>1.1-SNAPSHOT</javax-validation-commons.version>
 		<epayment-facade.version>1.1-SNAPSHOT</epayment-facade.version>
+		<!-- oldies -->
+		<international-lib.version>3.3-SNAPSHOT</international-lib.version>
+		<kz-lib.version>3.2-SNAPSHOT</kz-lib.version>
 	</properties>
 
 	<dependencyManagement>
@@ -66,6 +69,21 @@
 				<artifactId>javax-validation-commons</artifactId>
 				<version>${javax-validation-commons.version}</version>
 			</dependency>
+			<!-- oldies -->
+			<dependency>
+				<groupId>com.lapsa.international-lib</groupId>
+				<artifactId>international-root</artifactId>
+				<version>${international-lib.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.lapsa.kz-lib</groupId>
+				<artifactId>kz-root</artifactId>
+				<version>${kz-lib.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -78,16 +96,22 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+			<groupId>com.lapsa.international-lib</groupId>
+			<artifactId>international-core</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.lapsa.kz-lib</groupId>
+			<artifactId>kz-core</artifactId>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>tech.lapsa.java</groupId>
 			<artifactId>java-jaxb-commons</artifactId>
 			<scope>compile</scope>
 			<optional>true</optional>
-			<exclusions>
-				<exclusion>
-					<artifactId>java-commons</artifactId>
-					<groupId>tech.lapsa.java</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<!-- ext -->
 		<dependency>
@@ -106,12 +130,6 @@
 			<groupId>tech.lapsa.javax</groupId>
 			<artifactId>javax-validation-commons</artifactId>
 			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>java-commons</artifactId>
-					<groupId>tech.lapsa.java</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>tech.lapsa.epayment</groupId>
@@ -121,10 +139,6 @@
 				<exclusion>
 					<groupId>tech.lapsa.epayment</groupId>
 					<artifactId>epayment-domain</artifactId>
-				</exclusion>
-				<exclusion>
-					<artifactId>international-core</artifactId>
-					<groupId>com.lapsa.international-lib</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>
