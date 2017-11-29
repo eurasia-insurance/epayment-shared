@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
 import tech.lapsa.javax.validation.NotNullValue;
 
-@XmlRootElement(name = "paymentURIQualifier")
+@XmlRootElement(name = "paymentURISpecifierRequest")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class XmlPaymentURIQualifierRequest implements Serializable {
+public class XmlPaymentURISpecifierRequest implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,10 +33,10 @@ public class XmlPaymentURIQualifierRequest implements Serializable {
 
     // CONSTRUCTORS
 
-    public XmlPaymentURIQualifierRequest() {
+    public XmlPaymentURISpecifierRequest() {
     }
 
-    public XmlPaymentURIQualifierRequest(String invoiceNumber) {
+    public XmlPaymentURISpecifierRequest(String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 }

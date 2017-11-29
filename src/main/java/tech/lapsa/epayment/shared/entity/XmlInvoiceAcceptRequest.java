@@ -24,7 +24,7 @@ import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidEmail;
 import tech.lapsa.kz.taxpayer.TaxpayerNumber;
 
-@XmlRootElement(name = "acceptingInvoice")
+@XmlRootElement(name = "invoiceAcceptRequest")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class XmlInvoiceAcceptRequest implements Serializable {
 

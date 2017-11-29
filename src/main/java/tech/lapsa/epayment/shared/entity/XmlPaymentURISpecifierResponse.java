@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.ValidURI;
 
-@XmlRootElement(name = "paymentURI")
+@XmlRootElement(name = "paymentURISpecifierResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class XmlPaymentURIQualifierResponse implements Serializable {
+public class XmlPaymentURISpecifierResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,10 +34,10 @@ public class XmlPaymentURIQualifierResponse implements Serializable {
 
     // CONSTRUCTORS
 
-    public XmlPaymentURIQualifierResponse() {
+    public XmlPaymentURISpecifierResponse() {
     }
 
-    public XmlPaymentURIQualifierResponse(URI uri) {
+    public XmlPaymentURISpecifierResponse(URI uri) {
 	this.uri = uri;
     }
 }

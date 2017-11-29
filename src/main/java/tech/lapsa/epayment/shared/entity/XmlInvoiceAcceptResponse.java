@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
 import tech.lapsa.javax.validation.NotNullValue;
 
-@XmlRootElement(name = "acceptingInvoiceResponse")
+@XmlRootElement(name = "invoiceAcceptResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class XmlInvoiceAcceptResponce implements Serializable {
+public class XmlInvoiceAcceptResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,10 +33,10 @@ public class XmlInvoiceAcceptResponce implements Serializable {
 
     // CONSTRUCTORS
 
-    public XmlInvoiceAcceptResponce() {
+    public XmlInvoiceAcceptResponse() {
     }
 
-    public XmlInvoiceAcceptResponce(String invoiceNumber) {
+    public XmlInvoiceAcceptResponse(String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 
