@@ -6,5 +6,6 @@ public final class EpaymentDestinations {
     }
 
     public static final String ACCEPT_INVOICE = "";
+    public static final String PAYMENT_URI_QUALIFIER = "";
     
 }
