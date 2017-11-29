@@ -5,16 +5,8 @@ public final class EpaymentDestinations {
     private EpaymentDestinations() {
     }
 
-    // TODO : set params
-    static {
-	init();
-    }
-
-    static void init() {
-	throw new RuntimeException("Parameters must set");
-    }
-
-    public static final String ACCEPT_INVOICE = "";
-    public static final String PAYMENT_URI_QUALIFIER = "";
+    public static final String ACCEPT_INVOICE = "epayment/jms/calls/acceptInvoice";
+    public static final String SPECIFY_PAYMENT_URI = "epayment/jms/calls/specifyPaymentURI";
+    public static final String INVOICE_HAS_PAID = "epayment/jms/events/invoicesHasPaid";
 
 }
