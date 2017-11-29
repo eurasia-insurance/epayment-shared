@@ -47,6 +47,10 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	this.items = items;
     }
 
+    public void setItem(XmlInvoicePurposeItem item) {
+	this.items = new XmlInvoicePurposeItem[] { item };
+    }
+
     // currency *
 
     @XmlAttribute
@@ -106,6 +110,10 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 
     public void setExternalId(String externalId) {
 	this.externalId = externalId;
+    }
+
+    public void setExternalId(Number externalId) {
+	this.externalId = String.valueOf(externalId);
     }
 
     // email
