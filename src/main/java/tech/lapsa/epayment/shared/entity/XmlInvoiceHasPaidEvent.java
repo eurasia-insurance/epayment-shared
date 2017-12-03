@@ -11,7 +11,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
 import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotEmptyString;
 import tech.lapsa.javax.validation.NotNullValue;
@@ -41,7 +40,7 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     @XmlAttribute
     @NotNullValue
-    @ValidInvoiceNumber
+    // @ValidInvoiceNumber // disabled beacuse EpaymentFacade is not available at recipient application
     private String invoiceNumber;
 
     public String getInvoiceNumber() {
