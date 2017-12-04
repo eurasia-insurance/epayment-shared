@@ -9,7 +9,6 @@ import javax.validation.ValidationException;
 import tech.lapsa.epayment.facade.EpaymentFacade;
 import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
 import tech.lapsa.javax.cdi.commons.MyBeans;
-import tech.lapsa.javax.cdi.qualifiers.QDelegateToEJB;
 
 public class ValidInvoiceNumberConstraintValidator implements ConstraintValidator<ValidInvoiceNumber, String> {
 
@@ -23,7 +22,7 @@ public class ValidInvoiceNumberConstraintValidator implements ConstraintValidato
 	    return true;
 	try {
 	    return reThrowAsUnchecked(() -> {
-		return MyBeans.lookupCDI(EpaymentFacade.class, QDelegateToEJB.DEFAULT_INSTANCE) //
+		return MyBeans.lookup(EpaymentFacade.class) //
 			.orElseThrow(
 				() -> new ValidationException("Cannot find an instance of " + EpaymentFacade.class)) //
 			.hasInvoiceWithNumber(value);
