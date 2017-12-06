@@ -14,9 +14,9 @@ import tech.lapsa.java.commons.function.MyOptionals;
 import tech.lapsa.javax.validation.NotNullValue;
 import tech.lapsa.javax.validation.NotZeroAmount;
 
-@XmlRootElement(name = "paymentWithUnknwonTypeCompleterRequest")
+@XmlRootElement(name = "paymentCompleteUnkownTypeRequest")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class XmlPaymentWithUnknwonTypeCompleterRequest implements Serializable {
+public class XmlPaymentCompleteUnkownTypeRequest implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -83,10 +83,10 @@ public class XmlPaymentWithUnknwonTypeCompleterRequest implements Serializable {
 
     // CONSTRUCTORS
 
-    public XmlPaymentWithUnknwonTypeCompleterRequest() {
+    public XmlPaymentCompleteUnkownTypeRequest() {
     }
 
-    public XmlPaymentWithUnknwonTypeCompleterRequest(final String invoiceNumber, final Double paidAmount,
+    public XmlPaymentCompleteUnkownTypeRequest(final String invoiceNumber, final Double paidAmount,
 	    final Instant paidInstant, final String paidReference) {
 	this.invoiceNumber = invoiceNumber;
 	this.paidAmount = paidAmount;
