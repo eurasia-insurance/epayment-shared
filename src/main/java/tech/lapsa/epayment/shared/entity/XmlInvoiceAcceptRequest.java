@@ -43,12 +43,12 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return items;
     }
 
-    public void setItems(XmlInvoicePurposeItem[] items) {
+    public void setItems(final XmlInvoicePurposeItem[] items) {
 	this.items = items;
     }
 
-    public void setItem(XmlInvoicePurposeItem item) {
-	this.items = new XmlInvoicePurposeItem[] { item };
+    public void setItem(final XmlInvoicePurposeItem item) {
+	items = new XmlInvoicePurposeItem[] { item };
     }
 
     // currency *
@@ -62,7 +62,7 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(final Currency currency) {
 	this.currency = currency;
     }
 
@@ -76,7 +76,7 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return language;
     }
 
-    public void setLanguage(LocalizationLanguage language) {
+    public void setLanguage(final LocalizationLanguage language) {
 	this.language = language;
     }
 
@@ -91,7 +91,7 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
 	this.name = name;
     }
 
@@ -108,11 +108,11 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return MyOptionals.of(externalId);
     }
 
-    public void setExternalId(String externalId) {
+    public void setExternalId(final String externalId) {
 	this.externalId = externalId;
     }
 
-    public void setExternalId(Number externalId) {
+    public void setExternalId(final Number externalId) {
 	this.externalId = String.valueOf(externalId);
     }
 
@@ -130,7 +130,7 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return MyOptionals.of(getEmail());
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
 	this.email = email;
     }
 
@@ -147,7 +147,7 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return MyOptionals.of(getPhoneNumber());
     }
 
-    public void setPhoneNumber(PhoneNumber phoneNumber) {
+    public void setPhoneNumber(final PhoneNumber phoneNumber) {
 	this.phoneNumber = phoneNumber;
     }
 
@@ -164,7 +164,7 @@ public class XmlInvoiceAcceptRequest implements Serializable {
 	return MyOptionals.of(getTaxpayerNumber());
     }
 
-    public void setTaxpayerNumber(TaxpayerNumber taxpayerNumber) {
+    public void setTaxpayerNumber(final TaxpayerNumber taxpayerNumber) {
 	this.taxpayerNumber = taxpayerNumber;
     }
 

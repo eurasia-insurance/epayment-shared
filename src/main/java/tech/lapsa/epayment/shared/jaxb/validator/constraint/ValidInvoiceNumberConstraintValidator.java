@@ -1,13 +1,12 @@
 package tech.lapsa.epayment.shared.jaxb.validator.constraint;
 
-import static tech.lapsa.java.commons.function.MyExceptions.*;
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.ValidationException;
 
 import tech.lapsa.epayment.facade.EpaymentFacade;
 import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
+import tech.lapsa.java.commons.exceptions.IllegalArgument;
 import tech.lapsa.java.commons.function.MyExceptions;
 import tech.lapsa.javax.cdi.commons.MyBeans;
 import tech.lapsa.javax.cdi.qualifiers.QDelegateToEJB;
@@ -23,14 +22,12 @@ public class ValidInvoiceNumberConstraintValidator implements ConstraintValidato
 	if (value == null)
 	    return true;
 	try {
-	    return reThrowAsUnchecked(() -> {
-		return MyBeans.lookupCDI(EpaymentFacade.class, QDelegateToEJB.DEFAULT_INSTANCE) //
-			.orElseThrow(MyExceptions.supplier(ValidationException::new,
-				"Cannot find an instance of '%1$s'", EpaymentFacade.class)) //
-			.hasInvoiceWithNumber(value);
-	    }).booleanValue();
-	} catch (final IllegalArgumentException e) {
-	    return false;
+	    return MyBeans.lookupCDI(EpaymentFacade.class, QDelegateToEJB.DEFAULT_INSTANCE) //
+		    .orElseThrow(MyExceptions.supplier(ValidationException::new,
+			    "Cannot find an instance of '%1$s'", EpaymentFacade.class)) //
+		    .hasInvoiceWithNumber(value);
+	} catch (final IllegalArgument e) {
+	    throw new ValidationException(e);
 	}
     }
 }
