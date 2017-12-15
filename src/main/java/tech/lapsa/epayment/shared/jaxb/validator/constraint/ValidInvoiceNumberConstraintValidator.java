@@ -8,7 +8,7 @@ import tech.lapsa.epayment.facade.EpaymentFacade;
 import tech.lapsa.epayment.facade.EpaymentFacade.EpaymentFacadeRemote;
 import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
 import tech.lapsa.java.commons.exceptions.IllegalArgument;
-import tech.lapsa.javax.cdi.commons.MyBeans;
+import tech.lapsa.java.commons.naming.MyNaming;
 
 public class ValidInvoiceNumberConstraintValidator implements ConstraintValidator<ValidInvoiceNumber, String> {
 
@@ -21,7 +21,7 @@ public class ValidInvoiceNumberConstraintValidator implements ConstraintValidato
 	if (value == null)
 	    return true;
 
-	final EpaymentFacade epayments = MyBeans.lookupEJB(ValidationException::new,
+	final EpaymentFacade epayments = MyNaming.lookupEJB(ValidationException::new,
 		EpaymentFacade.APPLICATION_NAME,
 		EpaymentFacade.MODULE_NAME,
 		EpaymentFacadeRemote.class,

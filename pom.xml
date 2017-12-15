@@ -21,7 +21,6 @@
 		<java-commons.version>1.1-SNAPSHOT</java-commons.version>
 		<!-- tech -->
 		<java-jaxb-commons.version>1.1-SNAPSHOT</java-jaxb-commons.version>
-		<javax-cdi-commons.version>1.1-SNAPSHOT</javax-cdi-commons.version>
 		<javax-validation-commons.version>1.1-SNAPSHOT</javax-validation-commons.version>
 		<epayment-facade.version>1.1-SNAPSHOT</epayment-facade.version>
 		<!-- oldies -->
@@ -58,11 +57,6 @@
 				<groupId>tech.lapsa.java</groupId>
 				<artifactId>java-jaxb-commons</artifactId>
 				<version>${java-jaxb-commons.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>tech.lapsa.javax</groupId>
-				<artifactId>javax-cdi-commons</artifactId>
-				<version>${javax-cdi-commons.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>tech.lapsa.javax</groupId>
@@ -121,11 +115,6 @@
 			<optional>true</optional>
 		</dependency>
 		<!-- validation block scope 'PROVIDED' -->
-		<dependency>
-			<groupId>tech.lapsa.javax</groupId>
-			<artifactId>javax-cdi-commons</artifactId>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>tech.lapsa.javax</groupId>
 			<artifactId>javax-validation-commons</artifactId>
