@@ -4,7 +4,6 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.ValidationException;
 
-import tech.lapsa.epayment.facade.EpaymentFacade;
 import tech.lapsa.epayment.facade.EpaymentFacade.EpaymentFacadeRemote;
 import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
 import tech.lapsa.java.commons.exceptions.IllegalArgument;
@@ -21,11 +20,11 @@ public class ValidInvoiceNumberConstraintValidator implements ConstraintValidato
 	if (value == null)
 	    return true;
 
-	final EpaymentFacade epayments = MyNaming.lookupEJB(ValidationException::new,
-		EpaymentFacade.APPLICATION_NAME,
-		EpaymentFacade.MODULE_NAME,
-		EpaymentFacadeRemote.class,
-		EpaymentFacade.class);
+	final EpaymentFacadeRemote epayments = MyNaming.lookupEJB(ValidationException::new,
+		EpaymentFacadeRemote.APPLICATION_NAME,
+		EpaymentFacadeRemote.MODULE_NAME,
+		EpaymentFacadeRemote.BEAN_NAME,
+		EpaymentFacadeRemote.class);
 	try {
 	    return epayments.hasInvoiceWithNumber(value);
 	} catch (final IllegalArgument e) {
