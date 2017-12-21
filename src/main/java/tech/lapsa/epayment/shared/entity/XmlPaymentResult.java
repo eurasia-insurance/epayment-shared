@@ -35,7 +35,8 @@ public class XmlPaymentResult implements Serializable {
     public XmlPaymentResult() {
     }
 
-    public XmlPaymentResult(final XmlPaymentMethodType type, final String paymentReference, final Instant paymentTimestamp) {
+    public XmlPaymentResult(final XmlPaymentMethodType type, final String paymentReference,
+	    final Instant paymentTimestamp) {
 	this.type = type;
 	this.paymentReference = paymentReference;
 	this.paymentTimestamp = paymentTimestamp;

@@ -1,14 +1,13 @@
 package tech.lapsa.epayment.shared.jaxb.validator.constraint;
 
-import static tech.lapsa.java.commons.function.MyExceptions.*;
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.ValidationException;
 
-import tech.lapsa.epayment.facade.EpaymentFacade;
+import tech.lapsa.epayment.facade.EpaymentFacade.EpaymentFacadeRemote;
 import tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber;
-import tech.lapsa.javax.cdi.commons.MyBeans;
+import tech.lapsa.java.commons.exceptions.IllegalArgument;
+import tech.lapsa.java.commons.naming.MyNaming;
 
 public class ValidInvoiceNumberConstraintValidator implements ConstraintValidator<ValidInvoiceNumber, String> {
 
@@ -17,17 +16,18 @@ public class ValidInvoiceNumberConstraintValidator implements ConstraintValidato
     }
 
     @Override
-    public boolean isValid(final String value, final ConstraintValidatorContext context) {
+    public boolean isValid(final String value, final ConstraintValidatorContext context) throws ValidationException {
 	if (value == null)
 	    return true;
+
+	final EpaymentFacadeRemote epayments = MyNaming.lookupEJB(ValidationException::new,
+		EpaymentFacadeRemote.APPLICATION_NAME,
+		EpaymentFacadeRemote.MODULE_NAME,
+		EpaymentFacadeRemote.BEAN_NAME,
+		EpaymentFacadeRemote.class);
 	try {
-	    return reThrowAsUnchecked(() -> {
-		return MyBeans.lookup(EpaymentFacade.class) //
-			.orElseThrow(
-				() -> new ValidationException("Cannot find an instance of " + EpaymentFacade.class)) //
-			.hasInvoiceWithNumber(value);
-	    }).booleanValue();
-	} catch (final IllegalArgumentException e) {
+	    return epayments.hasInvoiceWithNumber(value);
+	} catch (final IllegalArgument e) {
 	    return false;
 	}
     }

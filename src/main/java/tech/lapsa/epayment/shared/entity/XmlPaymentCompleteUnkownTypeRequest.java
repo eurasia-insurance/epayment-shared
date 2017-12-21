@@ -31,7 +31,7 @@ public class XmlPaymentCompleteUnkownTypeRequest implements Serializable {
 	return invoiceNumber;
     }
 
-    public void setInvoiceNumber(String invoiceNumber) {
+    public void setInvoiceNumber(final String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 
@@ -46,7 +46,7 @@ public class XmlPaymentCompleteUnkownTypeRequest implements Serializable {
 	return paidAmount;
     }
 
-    public void setPaidAmount(Double paidAmount) {
+    public void setPaidAmount(final Double paidAmount) {
 	this.paidAmount = paidAmount;
     }
 
@@ -60,7 +60,7 @@ public class XmlPaymentCompleteUnkownTypeRequest implements Serializable {
 	return paidInstant;
     }
 
-    public void setPaidInstant(Instant paidInstant) {
+    public void setPaidInstant(final Instant paidInstant) {
 	this.paidInstant = paidInstant;
     }
 
@@ -77,7 +77,7 @@ public class XmlPaymentCompleteUnkownTypeRequest implements Serializable {
 	return MyOptionals.of(paidReference);
     }
 
-    public void setPaidReference(String paidReference) {
+    public void setPaidReference(final String paidReference) {
 	this.paidReference = paidReference;
     }
 

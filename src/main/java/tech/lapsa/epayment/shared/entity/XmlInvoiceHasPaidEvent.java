@@ -32,7 +32,7 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 	return method;
     }
 
-    public void setMethod(String method) {
+    public void setMethod(final String method) {
 	this.method = method;
     }
 
@@ -40,14 +40,15 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     @XmlAttribute
     @NotNullValue
-    // @ValidInvoiceNumber // disabled beacuse EpaymentFacade is not available at recipient application
+    // @ValidInvoiceNumber // disabled beacuse EpaymentFacade is not available
+    // at recipient application
     private String invoiceNumber;
 
     public String getInvoiceNumber() {
 	return invoiceNumber;
     }
 
-    public void setInvoiceNumber(String invoiceNumber) {
+    public void setInvoiceNumber(final String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 
@@ -61,7 +62,7 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 	return instant;
     }
 
-    public void setInstant(Instant instant) {
+    public void setInstant(final Instant instant) {
 	this.instant = instant;
     }
 
@@ -76,7 +77,7 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 	return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(final Double amount) {
 	this.amount = amount;
     }
 
@@ -90,7 +91,7 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 	return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(final Currency currency) {
 	this.currency = currency;
     }
 
@@ -107,7 +108,7 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 	return MyOptionals.of(getReferenceNumber());
     }
 
-    public void setReferenceNumber(String referenceNumber) {
+    public void setReferenceNumber(final String referenceNumber) {
 	this.referenceNumber = referenceNumber;
     }
 
@@ -124,7 +125,7 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 	return MyOptionals.of(getExternalId());
     }
 
-    public void setExternalId(String externalId) {
+    public void setExternalId(final String externalId) {
 	this.externalId = externalId;
     }
 

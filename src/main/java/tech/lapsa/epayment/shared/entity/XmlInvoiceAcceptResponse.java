@@ -27,7 +27,7 @@ public class XmlInvoiceAcceptResponse implements Serializable {
 	return invoiceNumber;
     }
 
-    public void setInvoiceNumber(String invoiceNumber) {
+    public void setInvoiceNumber(final String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 
@@ -36,7 +36,7 @@ public class XmlInvoiceAcceptResponse implements Serializable {
     public XmlInvoiceAcceptResponse() {
     }
 
-    public XmlInvoiceAcceptResponse(String invoiceNumber) {
+    public XmlInvoiceAcceptResponse(final String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 

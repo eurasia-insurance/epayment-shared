@@ -28,7 +28,7 @@ public class XmlPaymentURISpecifierResponse implements Serializable {
 	return uri;
     }
 
-    public void setInvoiceNumber(URI uri) {
+    public void setInvoiceNumber(final URI uri) {
 	this.uri = uri;
     }
 
@@ -37,7 +37,7 @@ public class XmlPaymentURISpecifierResponse implements Serializable {
     public XmlPaymentURISpecifierResponse() {
     }
 
-    public XmlPaymentURISpecifierResponse(URI uri) {
+    public XmlPaymentURISpecifierResponse(final URI uri) {
 	this.uri = uri;
     }
 }

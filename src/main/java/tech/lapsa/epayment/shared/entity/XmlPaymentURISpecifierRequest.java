@@ -27,7 +27,7 @@ public class XmlPaymentURISpecifierRequest implements Serializable {
 	return invoiceNumber;
     }
 
-    public void setInvoiceNumber(String invoiceNumber) {
+    public void setInvoiceNumber(final String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 
@@ -36,7 +36,7 @@ public class XmlPaymentURISpecifierRequest implements Serializable {
     public XmlPaymentURISpecifierRequest() {
     }
 
-    public XmlPaymentURISpecifierRequest(String invoiceNumber) {
+    public XmlPaymentURISpecifierRequest(final String invoiceNumber) {
 	this.invoiceNumber = invoiceNumber;
     }
 }
