@@ -5,27 +5,14 @@ import java.time.Instant;
 import java.util.Currency;
 import java.util.Optional;
 
-import javax.validation.constraints.Min;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-
 import tech.lapsa.java.commons.function.MyOptionals;
-import tech.lapsa.javax.validation.NotEmptyString;
-import tech.lapsa.javax.validation.NotNullValue;
 
-@XmlRootElement(name = "invoiceHasPaidEvent")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class XmlInvoiceHasPaidEvent implements Serializable {
+public class InvoiceHasPaidEvent implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     // method *
 
-    @XmlAttribute
-    @NotNullValue
-    @NotEmptyString
     private String method;
 
     public String getMethod() {
@@ -38,10 +25,6 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     // invoiceNumber *
 
-    @XmlAttribute
-    @NotNullValue
-    // @ValidInvoiceNumber // disabled beacuse EpaymentFacade is not available
-    // at recipient application
     private String invoiceNumber;
 
     public String getInvoiceNumber() {
@@ -54,8 +37,6 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     // instant *
 
-    @XmlAttribute
-    @NotNullValue
     private Instant instant;
 
     public Instant getInstant() {
@@ -68,9 +49,6 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     // amount *
 
-    @XmlAttribute
-    @NotNullValue
-    @Min(0)
     private Double amount;
 
     public Double getAmount() {
@@ -83,8 +61,6 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     // currency *
 
-    @XmlAttribute
-    @NotNullValue
     private Currency currency;
 
     public Currency getCurrency() {
@@ -97,7 +73,6 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     // referenceNumber
 
-    @XmlAttribute
     private String referenceNumber;
 
     public String getReferenceNumber() {
@@ -114,7 +89,6 @@ public class XmlInvoiceHasPaidEvent implements Serializable {
 
     // externalId
 
-    @XmlAttribute
     private String externalId;
 
     public String getExternalId() {
