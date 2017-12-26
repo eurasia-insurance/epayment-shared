@@ -1,1 +1,0 @@
-tech.lapsa.epayment.shared.jaxb.validator.ValidInvoiceNumber.message = =KAZ= Неверный номер электронного счета или электронный счет не найден
