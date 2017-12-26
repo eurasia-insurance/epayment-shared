@@ -7,7 +7,7 @@ import java.util.Optional;
 
 import tech.lapsa.java.commons.function.MyOptionals;
 
-public class InvoiceHasPaidJMSEvent implements Serializable {
+public class InvoiceHasPaidJmsEvent implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
