@@ -15,65 +15,16 @@
 
 	<properties>
 		<!-- BOMS -->
-		<javax-javaee-bom.version>7.0a-SNAPSHOT</javax-javaee-bom.version>
-		<payara-bom.version>4.1.2-2-SNAPSHOT</payara-bom.version>
-		<java-commons.version>1.1-SNAPSHOT</java-commons.version>
-		<!-- tech -->
-		<java-jaxb-commons.version>1.1-SNAPSHOT</java-jaxb-commons.version>
-		<javax-validation-commons.version>1.1-SNAPSHOT</javax-validation-commons.version>
-		<epayment-facade.version>1.1-SNAPSHOT</epayment-facade.version>
-		<!-- oldies -->
-		<international-lib.version>3.3-SNAPSHOT</international-lib.version>
-		<kz-lib.version>3.2-SNAPSHOT</kz-lib.version>
+		<java-commons.version>1.1</java-commons.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<!-- BOMS -->
 			<dependency>
-				<groupId>tech.lapsa.javax</groupId>
-				<artifactId>javax-javaee-bom</artifactId>
-				<version>${javax-javaee-bom.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
 				<groupId>tech.lapsa.java</groupId>
 				<artifactId>java-commons-root</artifactId>
 				<version>${java-commons.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>tech.lapsa.epayment</groupId>
-				<artifactId>epayment-facade-root</artifactId>
-				<version>${epayment-facade.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!-- tech -->
-			<dependency>
-				<groupId>tech.lapsa.java</groupId>
-				<artifactId>java-jaxb-commons</artifactId>
-				<version>${java-jaxb-commons.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>tech.lapsa.javax</groupId>
-				<artifactId>javax-validation-commons</artifactId>
-				<version>${javax-validation-commons.version}</version>
-			</dependency>
-			<!-- oldies -->
-			<dependency>
-				<groupId>com.lapsa.international-lib</groupId>
-				<artifactId>international-root</artifactId>
-				<version>${international-lib.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.lapsa.kz-lib</groupId>
-				<artifactId>kz-root</artifactId>
-				<version>${kz-lib.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -87,70 +38,6 @@
 			<artifactId>java-commons</artifactId>
 			<scope>compile</scope>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.lapsa.international-lib</groupId>
-			<artifactId>international-core</artifactId>
-			<scope>compile</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.lapsa.kz-lib</groupId>
-			<artifactId>kz-core</artifactId>
-			<scope>compile</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>tech.lapsa.java</groupId>
-			<artifactId>java-jaxb-commons</artifactId>
-			<scope>compile</scope>
-			<optional>true</optional>
-		</dependency>
-		<!-- ext -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<scope>compile</scope>
-			<optional>true</optional>
-		</dependency>
-		<!-- validation block scope 'PROVIDED' -->
-		<dependency>
-			<groupId>tech.lapsa.javax</groupId>
-			<artifactId>javax-validation-commons</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>tech.lapsa.epayment</groupId>
-			<artifactId>epayment-facade-client</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>tech.lapsa.epayment</groupId>
-					<artifactId>epayment-domain</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- JavaEE -->
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<!-- test -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-all</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
