@@ -71,6 +71,22 @@ public class InvoiceHasPaidJmsEvent implements Serializable {
 	this.currency = currency;
     }
 
+    // paymentCard
+
+    private String paymentCard;
+
+    public String getPaymentCard() {
+	return paymentCard;
+    }
+
+    public Optional<String> optPaymentCard() {
+	return MyOptionals.of(paymentCard);
+    }
+
+    public void setPaymentCard(String paymentCard) {
+	this.paymentCard = paymentCard;
+    }
+
     // referenceNumber
 
     private String referenceNumber;
@@ -102,5 +118,4 @@ public class InvoiceHasPaidJmsEvent implements Serializable {
     public void setExternalId(final String externalId) {
 	this.externalId = externalId;
     }
-
 }
