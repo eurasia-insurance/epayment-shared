@@ -9,7 +9,7 @@
 
 	<groupId>tech.lapsa.epayment</groupId>
 	<artifactId>epayment-shared</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 
 	<name>Epayment Lib : Shared</name>
 
@@ -44,7 +44,7 @@
 	<scm>
 		<connection>scm:git:https://gitlab.lapsa.tech/lapsa/epayment/shared.git</connection>
 		<developerConnection>scm:git:https://gitlab.lapsa.tech/lapsa/epayment/shared.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v1.0.1</tag>
 	</scm>
 
 	<issueManagement>
