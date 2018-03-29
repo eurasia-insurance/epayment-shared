@@ -9,7 +9,7 @@ import tech.lapsa.java.commons.function.MyOptionals;
 
 public class InvoiceHasPaidJmsEvent implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     // method *
 
@@ -85,6 +85,18 @@ public class InvoiceHasPaidJmsEvent implements Serializable {
 
     public void setPaymentCard(String paymentCard) {
 	this.paymentCard = paymentCard;
+    }
+
+    // payerName
+
+    private String payerName;
+
+    public void setPayerName(String payerName) {
+	this.payerName = payerName;
+    }
+
+    public String getPayerName() {
+	return payerName;
     }
 
     // referenceNumber
