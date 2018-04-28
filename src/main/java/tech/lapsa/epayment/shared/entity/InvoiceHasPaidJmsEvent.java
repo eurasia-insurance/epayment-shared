@@ -87,6 +87,22 @@ public class InvoiceHasPaidJmsEvent implements Serializable {
 	this.paymentCard = paymentCard;
     }
 
+    // paymentCardBank
+
+    private String paymentCardBank;
+
+    public String getPaymentCardBank() {
+	return paymentCardBank;
+    }
+
+    public void setPaymentCardBank(String paymentCardBank) {
+	this.paymentCardBank = paymentCardBank;
+    }
+
+    public Optional<String> optPaymentCardBank() {
+	return MyOptionals.of(getPaymentCardBank());
+    }
+
     // payerName
 
     private String payerName;
