@@ -10,6 +10,7 @@
 	<groupId>tech.lapsa.epayment</groupId>
 	<artifactId>epayment-shared</artifactId>
 	<version>CURRENT-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<name>Epayment Lib : Shared</name>
 
